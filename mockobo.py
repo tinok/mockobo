@@ -207,9 +207,9 @@ def get_submission_data(asset_content, media_file: Optional[str] = None):
         # TEXT
         elif data_type == 'text':
             if appearance == 'multiline':
-                res = lorem.get_sentence(count=randint(1, 20))
+                res = lorem.paragraph()
             else:
-                res = lorem.get_word(count=randint(1, 5))
+                res = lorem.text()[:20]  # limit single line text to 20 chars
 
         # DATE AND TIME
         elif data_type in ['datetime', 'date', 'time']:
